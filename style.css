@@ -211,13 +211,15 @@ main {
 .timeline::before {
     content: "";
     position: absolute;
-    /* Slight nudge keeps the guideline perfectly centered with the first bullet. */
-    left: calc(var(--timeline-marker-offset) + (var(--timeline-marker-size) / 2) - 1px);
+    /* Keep the spine perfectly centered with each marker for a clean vertical read. */
+    left: calc(var(--timeline-marker-offset) + (var(--timeline-marker-size) / 2));
+    /* Start the spine halfway through the first marker so it visually stems from it. */
     top: calc(var(--timeline-marker-top-gap) + (var(--timeline-marker-size) / 2));
-    bottom: 0;
+    bottom: calc(var(--timeline-marker-top-gap) - (var(--timeline-marker-size) / 2));
     width: 2px;
     background: var(--timeline-line);
     z-index: 0;
+    transform: translateX(-50%);
 }
 
 .timeline li {
