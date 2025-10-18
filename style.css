@@ -28,6 +28,32 @@ body {
     min-height: 100vh;
 }
 
+/* Theme-aligned scrollbar for consistent polished visuals */
+body {
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) rgba(15, 23, 42, 0.6);
+}
+
+body::-webkit-scrollbar {
+    width: 12px;
+}
+
+body::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.6);
+    border-radius: 999px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--accent), var(--accent-strong));
+    border-radius: 999px;
+    border: 3px solid rgba(30, 41, 59, 0.8);
+    box-shadow: inset 0 0 6px rgba(15, 23, 42, 0.35);
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-strong);
+}
+
 .page-wrapper {
     display: flex;
     flex-direction: column;
